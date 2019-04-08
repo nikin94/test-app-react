@@ -2,28 +2,6 @@ import React from 'react'
 import { Input, Tag } from 'antd'
 import { observer } from 'mobx-react'
 
-/*const colors = {
-  normal: '#bbbaab',
-  grass: '#8dd851',
-  fire: '#fa5444',
-  water: '#56aeff',
-  fighting: '#a85644',
-  flying: '#79a4ff',
-  poison: '#aa5da1',
-  ground: '#e9c956',
-  rock: '#cdbc72',
-  bug: '#c3d21f',
-  ghost: '#7975d7',
-  electric: '#fde53c',
-  psychic: '#fa65b4',
-  ice: '#96f1ff',
-  dragon: '#8a75ff',
-  dark: '#8e6956',
-  steel: '#c4c2d9',
-  fairy: '#faadff'
-}*/
-
-
 const { CheckableTag } = Tag;
 const URL_TYPES = 'https://pokeapi.co/api/v2/type/';
 
@@ -47,7 +25,6 @@ class Filter extends React.Component {
   constructor(props) {
     super(props);
     this.state = { types: [] };
-    //this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {

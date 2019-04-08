@@ -36,6 +36,7 @@ data.onChangeSearch = action((value) => {
 });
 
 data.onChangeTypes = action(async (e) => {
+  data.currentPage = 1;
   let { types, search } = data.filter;
   const newTypes = _cloneDeep(types);
   newTypes.includes(e)
@@ -115,9 +116,10 @@ class Plist extends React.Component {
       <div className='list'>
         {
           (data.filter.pokemons).map((name, index) => {
-            if (index >= (data.currentPage - 1) * data.pageSize && index < data.currentPage * data.pageSize) {
-              return <PokeCard key={`${name}${index}`} title={name} url={`${URLpokemon}${name}`} />
-            }
+            return (index >= (data.currentPage - 1) * data.pageSize && index < data.currentPage * data.pageSize)
+              ? <PokeCard key={`${name}${index}`} title={name} url={`${URLpokemon}${name}`} />
+              : false;
+
           })
         }
       </div>
