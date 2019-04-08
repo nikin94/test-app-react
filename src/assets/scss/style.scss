@@ -1,0 +1,171 @@
+@import "variables";
+@import "tags";
+@import "media";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $bg-color;
+}
+p {
+  margin: 0;
+}
+#root {
+  background: $bg-color url("#{$image-path}bg.jpg") no-repeat bottom;
+  background-size: 100% auto;
+}
+.container {
+  max-width: $container;
+  margin: 0 auto;
+  padding-bottom: 30%;
+  .ant-collapse {
+    background-color: transparent;
+    @include border-radius(25px);
+    overflow: hidden;
+    max-width: 600px;
+    margin: 10px auto;
+    border: 1px solid #fff;
+
+    .ant-collapse-item {
+      border-bottom: none;
+      .ant-collapse-header {
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+        text-transform: uppercase;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .ant-collapse-content {
+        background-color: $content-bg-color;
+      }
+    }
+  }
+  .ant-pagination {
+    margin: 0 auto 10px;
+    text-align: center;
+    .ant-pagination-prev,
+    .ant-pagination-next,
+    .ant-pagination-jump-prev,
+    .ant-pagination-jump-next,
+    .ant-pagination-item,
+    .ant-pagination-options {
+      margin-bottom: 5px;
+    }
+    .ant-pagination-options {
+      display: inline-block !important;
+    }
+  }
+  .filter {
+    text-align: center;
+    > * {
+      margin: 0 auto 10px;
+    }
+    .ant-input {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: $content-bg-color;
+  @include border-radius(25px);
+  clear: both;
+  .pokecard {
+    width: 200px;
+    min-height: 350px;
+    margin: 20px;
+    @include border-radius(8px);
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    .ant-card-head {
+    }
+    .ant-card-cover {
+      min-height: 198px;
+      padding: 5px;
+      .stat {
+        margin-bottom: 1px;
+        .stat-name {
+          font-weight: bold;
+          text-transform: capitalize;
+          padding-left: 3px;
+        }
+        .ant-progress {
+          display: block;
+          font-size: 0;
+        }
+      }
+
+      .no-image {
+        padding: 20px;
+      }
+      .ant-spin-spinning {
+        margin-top: 40%;
+      }
+      img {
+        max-width: 100%;
+      }
+      .ant-carousel {
+        .slick-slider {
+          &:hover {
+            .slick-arrow {
+              opacity: 1;
+            }
+          }
+          .slick-arrow {
+            @include transition(0.3s);
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border: solid rgba(0, 0, 0, 0.7);
+            border-width: 0 3px 3px 0;
+            padding: 3px;
+            vertical-align: middle;
+            width: 10px;
+            height: 10px;
+            border-top-left-radius: 7px;
+            &.slick-prev {
+              left: $slick-arrows-move;
+              @include transform(rotate(135deg));
+            }
+            &.slick-next {
+              right: $slick-arrows-move;
+              @include transform(rotate(-45deg));
+            }
+          }
+          .slick-list {
+            .slick-track {
+              .slick-slide {
+                min-height: 188px;
+              }
+            }
+          }
+          .slick-dots {
+            bottom: 7px;
+            li {
+              &.slick-active {
+                background-color: #444;
+              }
+              button {
+                background-color: #999;
+              }
+            }
+          }
+        }
+      }
+    }
+    .ant-card-body {
+      padding: 15px;
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

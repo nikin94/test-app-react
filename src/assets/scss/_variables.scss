@@ -1,0 +1,35 @@
+$container: 1200px;
+$image-path: "../img/";
+$bg-color: rgba(255, 148, 0, 1);
+$content-bg-color: #ffffff61;
+$slick-arrows-move: 0px;
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+  -o-transform: $value;
+  transform: $value;
+}
+
+@mixin border-radius($value) {
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  border-radius: $value;
+}
+
+@mixin gradient($type, $position1, $position2, $color-start, $color-end) {
+  background: -moz-linear-gradient($position1, $color-start 0%, $color-end 100%); /* FF3.6+ */
+  background: -webkit-linear-gradient($position1, $color-start 0%, $color-end 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient($position1, $color-start 0%, $color-end 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient($position1, $color-start 0%, $color-end 100%); /* IE10+ */
+  background: linear-gradient(to $position2, $color-start 0%, $color-end 100%); /* W3C */
+}
+
+@mixin transition($time, $prop: all, $ease: ease) {
+  -webkit-transition: $prop $time $ease;
+  -moz-transition: $prop $time $ease;
+  -ms-transition: $prop $time $ease;
+  -o-transition: $prop $time $ease;
+  transition: $prop $time $ease;
+}
